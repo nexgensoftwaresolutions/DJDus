@@ -13,8 +13,7 @@ const Footer = () => {
       className="bg-indigo-900 text-white py-16"
     >
       <div className="container mx-auto px-6">
-        
-     
+        {/* The Best DJ in Dire Dawa Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -133,14 +132,26 @@ const Footer = () => {
           </motion.div>
         </div>
 
+        {/* Developed by Section */}
         <motion.div
           className="mt-12 border-t border-gray-500 pt-6 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <p className="text-white font-poppins">
+          <p className="text-white font-poppins mb-4">
             &copy; {new Date().getFullYear()} DJ Dus. All Rights Reserved.
+          </p>
+          <p className="text-white font-poppins">
+            Developed by{' '}
+            <a 
+              href="https://nexgensoftwaresolutions.github.io/Nexgen.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-300 transition duration-300"
+            >
+              Nexgen Software Solutions
+            </a>
           </p>
         </motion.div>
       </div>
