@@ -32,13 +32,13 @@ export const Header = ({ language, onLanguageChange }) => {
         style={{ position: 'sticky', top: '0', zIndex: 50 }}
       >
         {/* Logo/Branding */}
-        <h1 className="text-3xl font-extrabold text-indigo-600 tracking-tighter">
+        <h1 className="text-3xl font-extrabold text-teal-600 tracking-tighter">
           DJ Dus
         </h1>
 
         {/* Hamburger Menu Icon for Mobile */}
         <button
-          className="block md:hidden text-3xl text-indigo-600 focus:outline-none"
+          className="block md:hidden text-3xl text-teal-600 focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
@@ -51,10 +51,10 @@ export const Header = ({ language, onLanguageChange }) => {
             smooth={true}
             offset={-80} // Adjust for header height
             duration={500}
-            className={`text-xl font-semibold transition duration-300 cursor-pointer ${
+            className={`text-xl  transition duration-300 cursor-pointer ${
               activeSection === 'about'
-                ? 'text-indigo-900'
-                : 'text-gray-700 font-poppins hover:text-indigo-600'
+                ? 'text-teal-900'
+                : 'text-black font-poppins hover:text-teal-600'
             }`}
           >
             {language === 'English' ? 'About Us' : language === 'Amharic' ? 'ስለ እኛ' : 'Waa’ee Keenya'}
@@ -64,10 +64,10 @@ export const Header = ({ language, onLanguageChange }) => {
             smooth={true}
             offset={-80} // Adjust for header height
             duration={500}
-            className={`text-xl  font-poppins font-semibold transition duration-300 cursor-pointer ${
+            className={`text-xl  font-poppins  transition duration-300 cursor-pointer ${
               activeSection === 'services'
-                ? 'text-indigo-900'
-                : 'text-gray-700 font-poppins hover:text-indigo-600'
+                ? 'text-teal-900'
+                : 'text-black font-poppins hover:text-teal-600'
             }`}
           >
             {language === 'English' ? 'Services' : language === 'Amharic' ? 'አገልግሎቶች' : 'Tajaajilawwan'}
@@ -77,10 +77,10 @@ export const Header = ({ language, onLanguageChange }) => {
             smooth={true}
             offset={-80} // Adjust for header height
             duration={500}
-            className={`text-xl font-poppins font-semibold transition duration-300 cursor-pointer ${
+            className={`text-xl font-poppins  transition duration-300 cursor-pointer ${
               activeSection === 'contact'
-                ? 'text-indigo-900'
-                : 'text-gray-700 font-poppins hover:text-indigo-600'
+                ? 'text-teal-900'
+                : 'text-black font-poppins hover:text-teal-600'
             }`}
           >
             {language === 'English' ? 'Contact' : language === 'Amharic' ? 'ያግኙን' : 'Nu Quunnamaa'}
@@ -90,7 +90,7 @@ export const Header = ({ language, onLanguageChange }) => {
         {/* Language Selector Dropdown */}
         <div className="relative">
           <button
-            className="bg-indigo-600 font-poppins text-white px-4 py-2 rounded-lg shadow-lg flex items-center hover:bg-indigo-700 transition duration-300"
+            className="bg-teal-600 font-poppins text-white px-4 py-2 rounded-lg shadow-lg flex items-center hover:bg-teal-700 transition duration-300"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             {language}
@@ -111,22 +111,22 @@ export const Header = ({ language, onLanguageChange }) => {
           </button>
           {/* Language Dropdown */}
           {dropdownOpen && (
-            <ul className="fixed  font-poppins right-0 mt-2 w-44 bg-white border border-gray-300 rounded-lg shadow-lg z-50 top-16">
+            <ul className="fixed font-poppins right-0 mt-2 w-44 bg-white border border-gray-300 rounded-lg shadow-lg z-50 top-16">
               <li
                 onClick={() => { onLanguageChange('English'); setDropdownOpen(false); }}
-                className="cursor-pointer px-4 py-2 font-poppins text-gray-700 hover:bg-indigo-600 hover:text-white transition duration-300"
+                className="cursor-pointer px-4 py-2 font-poppins text-black hover:bg-teal-600 hover:text-white transition duration-300"
               >
                 English
               </li>
               <li
                 onClick={() => { onLanguageChange('Amharic'); setDropdownOpen(false); }}
-                className="cursor-pointer px-4 py-2 font-poppins text-gray-700 hover:bg-indigo-600 hover:text-white transition duration-300"
+                className="cursor-pointer px-4 py-2 font-poppins text-black hover:bg-teal-600 hover:text-white transition duration-300"
               >
                 አማርኛ (Amharic)
               </li>
               <li
                 onClick={() => { onLanguageChange('Oromiffa'); setDropdownOpen(false); }}
-                className="cursor-pointer px-4 py-2 font-poppins text-gray-700 hover:bg-indigo-600 hover:text-white transition duration-300"
+                className="cursor-pointer px-4 py-2 font-poppins text-black hover:bg-teal-600 hover:text-white transition duration-300"
               >
                 Afaan Oromoo (Oromiffa)
               </li>
@@ -148,7 +148,7 @@ export const Header = ({ language, onLanguageChange }) => {
             smooth={true}
             offset={-80}
             duration={500}
-            className="block text-lg font-poppins text-gray-700 hover:text-indigo-600 cursor-pointer"
+            className="block text-lg font-poppins text-black hover:text-teal-600 cursor-pointer"
             onClick={() => setMenuOpen(false)} // Close menu on click
           >
             {language === 'English' ? 'About Us' : language === 'Amharic' ? 'ስለ እኛ' : 'Waa’ee Keenya'}
@@ -158,7 +158,7 @@ export const Header = ({ language, onLanguageChange }) => {
             smooth={true}
             offset={-80}
             duration={500}
-            className="block text-lg font-poppins text-gray-700 hover:text-indigo-600 cursor-pointer"
+            className="block text-lg font-poppins text-black hover:text-teal-600 cursor-pointer"
             onClick={() => setMenuOpen(false)} // Close menu on click
           >
             {language === 'English' ? 'Services' : language === 'Amharic' ? 'አገልግሎቶች' : 'Tajaajilawwan'}
@@ -168,7 +168,7 @@ export const Header = ({ language, onLanguageChange }) => {
             smooth={true}
             offset={-80}
             duration={500}
-            className="block text-lg font-poppins text-gray-700 hover:text-indigo-600 cursor-pointer"
+            className="block text-lg font-poppins text-black hover:text-teal-600 cursor-pointer"
             onClick={() => setMenuOpen(false)} // Close menu on click
           >
             {language === 'English' ? 'Contact' : language === 'Amharic' ? 'ያግኙን' : 'Nu Quunnamaa'}

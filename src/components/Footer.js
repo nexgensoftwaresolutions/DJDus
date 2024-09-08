@@ -10,7 +10,7 @@ const Footer = ({ language }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="bg-indigo-900 text-white py-16"
+      className="bg-teal-900 text-white py-16"
     >
       <div className="container mx-auto px-6">
         {/* The Best DJ in Dire Dawa Section */}
@@ -122,14 +122,14 @@ const Footer = ({ language }) => {
                 <FontAwesomeIcon icon={faFacebook} size="2x" />
               </motion.a>
               <motion.a 
-                href="#"
+                href="https://www.instagram.com/dj.dus1?igsh=MWE1ZXYzcm9saTVnaA=="
                 variants={{ hidden: { opacity: 0, scale: 0.5 }, visible: { opacity: 1, scale: 1 } }}
                 className="text-white hover:text-gray-300 transition duration-300"
               >
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
               </motion.a>
               <motion.a 
-                href="#"
+                href="https://www.tiktok.com/@djdusforwedding"
                 variants={{ hidden: { opacity: 0, scale: 0.5 }, visible: { opacity: 1, scale: 1 } }}
                 className="text-white hover:text-gray-300 transition duration-300"
               >

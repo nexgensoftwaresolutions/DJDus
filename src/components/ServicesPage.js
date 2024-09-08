@@ -35,7 +35,7 @@ const ServicesPage = ({ language }) => {
   return (
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold font-poppins text-indigo-900 text-center mb-12">
+        <h2 className="text-4xl font-bold font-poppins text-teal-900 text-center mb-12">
           {language === 'English' ? 'Our Services' : language === 'Amharic' ? 'አገልግሎቶቻችን' : 'Tajaajilawwan Keenya'}
         </h2>
         <div className="grid grid-cols-1 font-poppins md:grid-cols-2 lg:grid-cols-3 gap-12">

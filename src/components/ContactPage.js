@@ -10,7 +10,7 @@ const ContactPage = ({ language }) => {
       className="bg-gray-50 py-16"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold font-poppins  text-indigo-900 text-center mb-12">
+        <h2 className="text-4xl font-bold font-poppins  text-teal-900 text-center mb-12">
           {language === 'English' ? 'Contact Us' : language === 'Amharic' ? 'አግኙን' : 'Nu Quunnamaa'}
         </h2>
 
