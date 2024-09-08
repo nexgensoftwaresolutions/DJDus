@@ -9,7 +9,7 @@ import '@fontsource/poppins'; // Defaults to weight 400
 
 
 function App() {
-  const [language, setLanguage] = useState('English'); 
+  const [language, setLanguage] = useState('English'); // Managing language state globally
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
@@ -17,10 +17,10 @@ function App() {
 
   return (
     <div>
-    
+      {/* Pass the language and handler to Header */}
       <Header language={language} onLanguageChange={handleLanguageChange} />
 
-     
+      {/* Sections with language passed */}
       <Element name="about">
         <HeroSection language={language} />
       </Element>
@@ -33,7 +33,8 @@ function App() {
         <ContactPage language={language} /> 
       </Element>
       
-      <Footer />
+      {/* Pass language and handler to Footer */}
+      <Footer language={language} onLanguageChange={handleLanguageChange} />
     </div>
   );
 }

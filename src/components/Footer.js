@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-scroll'; // For smooth scrolling
-import { motion } from 'framer-motion'; // For animations
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For icons
-import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'; // Social media icons
+import { Link } from 'react-scroll'; 
+import { motion } from 'framer-motion'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'; 
 
-const Footer = () => {
+const Footer = ({ language, onLanguageChange }) => {
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
@@ -21,12 +21,38 @@ const Footer = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-poppins font-bold text-white">
-            The Best DJ in Dire Dawa
+            {language === 'English' ? 'The Best DJ in Dire Dawa' : language === 'Amharic' ? 'በድሬ ዳዋ ምርጥ ዲጀይ' : 'DJ Waliin Awwaaloo Dire Dawa Keessatti'}
           </h2>
           <p className="text-white font-poppins mt-2">
-            Elevating events with music, lights, and entertainment like never before.
+            {language === 'English'
+              ? 'Elevating events with music, lights, and entertainment like never before.'
+              : language === 'Amharic'
+              ? 'ክብርን በሙዚቃ፣ ብርሃን እና መዝናኛ እንዲህ በቀላሉ አማልክህ ማድረግ እንደሌላችኋል።'
+              : 'Sirna garaagaraa fi miidhagina sirna irratti hirmaannaa sababa ta\'u!'}
           </p>
         </motion.div>
+
+        {/* Language Selector in Footer */}
+        <div className="flex justify-center mb-8">
+          <button
+            className={`px-4 py-2 mr-4 ${language === 'English' ? 'bg-indigo-700 text-white' : 'bg-white text-indigo-900'}`}
+            onClick={() => onLanguageChange('English')}
+          >
+            English
+          </button>
+          <button
+            className={`px-4 py-2 mr-4 ${language === 'Amharic' ? 'bg-indigo-700 text-white' : 'bg-white text-indigo-900'}`}
+            onClick={() => onLanguageChange('Amharic')}
+          >
+            አማርኛ
+          </button>
+          <button
+            className={`px-4 py-2 ${language === 'Oromiffa' ? 'bg-indigo-700 text-white' : 'bg-white text-indigo-900'}`}
+            onClick={() => onLanguageChange('Oromiffa')}
+          >
+            Afaan Oromoo
+          </button>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           {/* About Section */}
@@ -35,10 +61,13 @@ const Footer = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-xl font-semibold mb-6 font-poppins text-white">About DJ Dus</h3>
+            <h3 className="text-xl font-semibold mb-6 font-poppins text-white">{language === 'English' ? 'About DJ Dus' : language === 'Amharic' ? 'ስለ DJ Dus' : 'Waa\'ee DJ Dus'}</h3>
             <p className="text-white font-poppins leading-relaxed">
-              DJ Dus offers professional DJ services for weddings, graduations, corporate events, and more.
-              We bring the best music, sound, and experience to make your event unforgettable.
+              {language === 'English'
+                ? 'DJ Dus offers professional DJ services for weddings, graduations, corporate events, and more.'
+                : language === 'Amharic'
+                ? 'DJ Dus ለሰርቶች፣ ትምህርቶች እና አካላት አድናቆች ሙዚቃ እንደ ምንጭ ማካተት እንደሚሆን።'
+                : 'DJ Dus tajaajila naannawaa fi bakka waantoota hedduudhaaf akka gaarii ta\'u dhiheessina.'}
             </p>
           </motion.div>
 
@@ -48,7 +77,7 @@ const Footer = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-xl font-semibold mb-6 font-poppins text-white">Quick Links</h3>
+            <h3 className="text-xl font-semibold mb-6 font-poppins text-white">{language === 'English' ? 'Quick Links' : language === 'Amharic' ? 'ፈጣን አገልግሎቶች' : 'Hawaasa Furtuun'}</h3>
             <ul className="space-y-4">
               <li>
                 <Link
@@ -57,7 +86,7 @@ const Footer = () => {
                   duration={500}
                   className="text-white font-poppins hover:text-gray-300 transition duration-300 cursor-pointer"
                 >
-                  About Us
+                  {language === 'English' ? 'About Us' : language === 'Amharic' ? 'ስለ እኛ' : 'Waa’ee Keenya'}
                 </Link>
               </li>
               <li>
@@ -67,7 +96,7 @@ const Footer = () => {
                   duration={500}
                   className="text-white font-poppins hover:text-gray-300 transition duration-300 cursor-pointer"
                 >
-                  Services
+                  {language === 'English' ? 'Services' : language === 'Amharic' ? 'አገልግሎቶች' : 'Tajaajilawwan'}
                 </Link>
               </li>
               <li>
@@ -77,19 +106,19 @@ const Footer = () => {
                   duration={500}
                   className="text-white font-poppins hover:text-gray-300 transition duration-300 cursor-pointer"
                 >
-                  Contact
+                  {language === 'English' ? 'Contact' : language === 'Amharic' ? 'አግኙን' : 'Nu Quunnamaa'}
                 </Link>
               </li>
             </ul>
           </motion.div>
 
-          {/* Social Links Section with Aligned Icons */}
+          {/* Social Links Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-xl font-semibold mb-6 font-poppins text-white">Follow Us</h3>
+            <h3 className="text-xl font-semibold mb-6 font-poppins text-white">{language === 'English' ? 'Follow Us' : language === 'Amharic' ? 'እኛን ተከተሉ' : 'Nu Hordofa'}</h3>
             <motion.div 
               className="flex items-center space-x-8 justify-center md:justify-start"
               initial="hidden"
@@ -143,7 +172,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} DJ Dus. All Rights Reserved.
           </p>
           <p className="text-white font-poppins">
-            Developed by{' '}
+            {language === 'English' ? 'Developed by ' : language === 'Amharic' ? 'የተሰራ በ ' : 'Develepheessaa'}
             <a 
               href="https://nexgensoftwaresolutions.github.io/Nexgen.github.io/"
               target="_blank"
