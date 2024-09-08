@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-scroll'; 
-import { motion } from 'framer-motion'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'; 
+import { Link } from 'react-scroll'; // For smooth scrolling
+import { motion } from 'framer-motion'; // For animations
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // For icons
+import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'; // Social media icons
 
-const Footer = ({ language, onLanguageChange }) => {
+const Footer = ({ language }) => {
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
@@ -31,28 +31,6 @@ const Footer = ({ language, onLanguageChange }) => {
               : 'Sirna garaagaraa fi miidhagina sirna irratti hirmaannaa sababa ta\'u!'}
           </p>
         </motion.div>
-
-        {/* Language Selector in Footer */}
-        <div className="flex justify-center mb-8">
-          <button
-            className={`px-4 py-2 mr-4 ${language === 'English' ? 'bg-indigo-700 text-white' : 'bg-white text-indigo-900'}`}
-            onClick={() => onLanguageChange('English')}
-          >
-            English
-          </button>
-          <button
-            className={`px-4 py-2 mr-4 ${language === 'Amharic' ? 'bg-indigo-700 text-white' : 'bg-white text-indigo-900'}`}
-            onClick={() => onLanguageChange('Amharic')}
-          >
-            አማርኛ
-          </button>
-          <button
-            className={`px-4 py-2 ${language === 'Oromiffa' ? 'bg-indigo-700 text-white' : 'bg-white text-indigo-900'}`}
-            onClick={() => onLanguageChange('Oromiffa')}
-          >
-            Afaan Oromoo
-          </button>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           {/* About Section */}
