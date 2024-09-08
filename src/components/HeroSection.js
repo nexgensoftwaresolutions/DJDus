@@ -50,7 +50,7 @@ export const HeroSection = ({ language }) => {
           {/* Call Button */}
           <motion.a
             whileHover={{ scale: 1.08 }}
-            className="inline-flex items-center bg-teal-900 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300"
+            className="inline-flex items-center bg-teal-900 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-teal-600 transition duration-300"
             href="tel:+251915149087"
           >
             <FontAwesomeIcon icon={faPhoneAlt} className="mr-3" />
